@@ -19,6 +19,14 @@
         <input type="submit" name="submit" value="Add Comment" />
       </form>
 
+  {% if comments %}
+    <h3>Previous Comments</h3>
+    <ul>
+      {% for c in comments %}
+      <li> {{ c.comment_left }} </li>
+      {% endfor %}
+  {% endif %}
+
   </body>
 
 </html>

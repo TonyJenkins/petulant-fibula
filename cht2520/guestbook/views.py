@@ -19,4 +19,6 @@ def add_comment (request):
   else:
     form = CommentForm ()
 
-  return render (request, 'guestbook/add_comment.html', {'form' : form })
+  context = { 'comments' : Comment.objects.all (), 'form' : form }
+
+  return render (request, 'guestbook/add_comment.html', context)
